@@ -76,28 +76,28 @@ or the game wont work (size of the letters deosnt matter)`);
 
 }
  
+ function playGame(){
+
+    let humanScore = 0
+    let computerScore = 0
+    let roundsCounter = 0
  
-
- let humanScore = 0
- let computerScore = 0
- let roundsCounter = 0
-
-function playRound(){
-    let humanChoice = getPlayerChoice();
-    let computerChoice = getComputerChoice();
-  console.log(computerChoice) 
-
-    if (humanChoice === computerChoice) {
-        alert('Opponent also chose '+computerChoice+'. It\'s a draw!');
-        roundsCounter += 1;
-    } else if (humanChoice === choice[1] && computerChoice === choice[0]) {
-            alert('Opponent chose '+computerChoice+'. You won!');
-            roundsCounter += 1;
-            humanScore += 1;
-            } else if (humanChoice === choice[2] && computerChoice === choice[1]) {
-                    alert('Opponent chose '+computerChoice+'. You won!');
+            function playRound(){
+                let humanChoice = getPlayerChoice();
+                let computerChoice = getComputerChoice();
+              console.log(computerChoice) 
+            
+                if (humanChoice === computerChoice) {
+                    alert('Opponent also chose '+computerChoice+'. It\'s a draw!');
                     roundsCounter += 1;
-                    humanScore += 1;
+                } else if (humanChoice === choice[1] && computerChoice === choice[0]) {
+                        alert('Opponent chose '+computerChoice+'. You won!');
+                        roundsCounter += 1;
+                        humanScore += 1;
+                } else if (humanChoice === choice[2] && computerChoice === choice[1]) {
+                        alert('Opponent chose '+computerChoice+'. You won!');
+                        roundsCounter += 1;
+                        humanScore += 1;
                 } else if (humanChoice === choice[0] && computerChoice === choice[2]) {
                         alert('Opponent chose '+computerChoice+'. You won!');
                         roundsCounter += 1;
@@ -106,16 +106,33 @@ function playRound(){
                         alert('Opponent chose '+computerChoice+'. You lost!');
                         roundsCounter += 1;
                         computerScore += 1;
-                        } else if (computerChoice === choice[2] && humanChoice === choice[1]) {
-                                alert('Opponent chose '+computerChoice+'. You lost!');
-                                roundsCounter += 1;
-                                computerScore += 1;
-                            } else if (computerChoice === choice[0] && humanChoice === choice[2]) {
-                                    alert('Opponent chose '+computerChoice+'. You lost!');
-                                    roundsCounter += 1;
-                                    computerScore += 1;
-                                } else{}
+                } else if (computerChoice === choice[2] && humanChoice === choice[1]) {
+                        alert('Opponent chose '+computerChoice+'. You lost!');
+                        roundsCounter += 1;
+                        computerScore += 1;
+                } else if (computerChoice === choice[0] && humanChoice === choice[2]) {
+                        alert('Opponent chose '+computerChoice+'. You lost!');
+                        roundsCounter += 1;
+                        computerScore += 1;
+                } 
+                                        
+            }
+do {
+    playRound();
+} while (roundsCounter<5);
 
-}
-           
- 
+if (roundsCounter === 5 && computerScore>humanScore) {
+    alert(`GAME OVER!!
+        You LOST!. Opponent Scored ${computerScore}. You scored ${humanScore}
+        Refresh page if You want to try again`)
+} else if (roundsCounter === 5 && humanScore>computerScore) {
+    alert(`GOOD GAME!!
+        You WON!. Opponent Scored ${computerScore}. You scored ${humanScore}
+        Refresh page if You want to try again`)
+} else if(roundsCounter === 5 && humanScore === computerScore){alert(`GOOD GAME!!
+    It's a draw!. Opponent Scored ${computerScore}. You scored ${humanScore}
+    Refresh page if You want to try again`)
+}       
+            
+}          
+playGame()
