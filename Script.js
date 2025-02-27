@@ -133,6 +133,6 @@ if (roundsCounter === 5 && computerScore>humanScore) {
     It's a draw!. Opponent Scored ${computerScore}. You scored ${humanScore}
     Refresh page if You want to try again`)
 }       
-            
+    /* it was really hard, had to look over internet a lot using mdn, finally for some last debuging used chatGPT and figured out to change the order of the loops. */        
 }          
 playGame()
