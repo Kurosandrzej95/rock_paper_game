@@ -1,0 +1,10 @@
+#logo {
+    height: 130px;
+    width: 130px;
+}
+#mainContainer {
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: ;
+}
