@@ -2,9 +2,67 @@
     height: 130px;
     width: 130px;
 }
-#mainContainer {
-    flex: auto;
+#container_Top {
+    display: flex;
+    flex-grow: 2;
+    padding: 20px;
+    flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 255, 0.315);
+    border: 5px, solid,rgba(255, 255, 255, 0.507);
+    border-radius: 20px;
+}
+
+#container_Bottom {
+    display: flex;
+    justify-content: space-around;
     align-items: center;
+    background-color:rgba(255, 255, 255, 0.205) ;
+    border-radius: 20px;
+    
+}
+
+#mainContainer {
+
+
+    justify-content: space-between;
     background-color: ;
+    padding: 25px;
+    border-color: black;
+    border: 5px,;
+}
+
+body{
+    background-color: rgb(106, 157, 224);
+}
+
+#logo {
+ background-color: rgb(255, 185, 120);
+ border-radius: 25px;
+ justify-self: center;
+ align-self: center;
+ margin: 10px;
+}
+
+#btnImage{
+    width: auto;
+    height: 100px;
+    border-radius: 25px;
+    border: 5px, solid, rgb(85, 100, 241);
+    background-color: rgb(255, 185, 120);
+
+}
+
+#headOfContainer{
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 200px;
+    font-weight: bold;
+    font-size: larger;
+}
+button {
+    border: 0px;
+    background: none;
 }

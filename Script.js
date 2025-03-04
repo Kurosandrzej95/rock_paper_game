@@ -27,14 +27,7 @@ function getComputerChoice() {
  function getPlayerChoice(){
     let playerInput
     let correct = false
-    const choiceRock = document.querySelector("#choiceRock");
-    const choicePaper = document.querySelector("#choicePaper");
-    const choiceScissors = document.querySelector ("#choiceScissors")
-
-    choiceRock.onclick = () => alert(`You chose ROCK! Oponnent choose ${getComputerChoice().toUpperCase()}`);
-    choicePaper.onclick = () => alert(`You chose PAPER! Oponnent choose ${getComputerChoice().toUpperCase()}`);
-    
-
+ 
     do {  
         playerPrompt = prompt(
 `Welcome to the rock paper scissors game !
@@ -124,7 +117,9 @@ or the game wont work (size of the letters deosnt matter)`);
                 } 
                                         
             }
-
+do {
+    playRound();
+} while (roundsCounter<5);
 
 if (roundsCounter === 5 && computerScore>humanScore) {
     alert(`GAME OVER!!
@@ -139,11 +134,5 @@ if (roundsCounter === 5 && computerScore>humanScore) {
     Refresh page if You want to try again`)
 }       
     /* it was really hard, had to look over internet a lot using mdn, finally for some last debuging used chatGPT and figured out to change the order of the loops. */        
-}  
-
-const buttons = document.querySelectorAll("button");
-buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-        alert(button.id);
-    });
-});
+}          
+playGame()
